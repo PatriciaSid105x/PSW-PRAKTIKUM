@@ -1,0 +1,1875 @@
+<!--Nama  : Chelsea Eunike Limbong
+    NIM   : 41425043
+    Prodi : DIV - Teknologi Rekayasa Perangkat Lunak-->
+    
+<!DOCTYPE html>
+<!-- Deklarasi tipe dokumen HTML5 -->
+
+<html lang="id">
+<!-- Tag pembuka HTML dengan bahasa Indonesia -->
+
+<head>
+    <!-- Bagian kepala dokumen yang berisi informasi meta dan styling -->
+    
+    <meta charset="UTF-8">
+    <!-- Set encoding karakter ke UTF-8 untuk mendukung semua karakter -->
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Membuat website responsive di semua ukuran perangkat -->
+    
+    <title>SMA PORTGAS D LUFFY</title>
+    <!-- Judul halaman yang muncul di tab browser -->
+    
+    <style>
+        /* Bagian CSS untuk styling tampilan website */
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        /* Reset semua margin dan padding default browser */
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background: #f4f4f4;
+        }
+        /* Styling body dengan font Segoe UI dan background abu-abu terang */
+        
+        header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        /* Header dengan background gradient biru dan shadow */
+        
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        /* Container header dengan lebar maksimal 1200px dan flexbox */
+        
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        /* Section logo dengan flexbox dan gap 20px */
+        
+        .logo {
+            width: 80px;
+            height: 80px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            font-weight: bold;
+            color: #1e3c72;
+        }
+        /* Logo berbentuk lingkaran dengan background putih */
+        
+        .school-info h1 {
+            font-size: 28px;
+            margin-bottom: 5px;
+        }
+        /* Judul sekolah dengan ukuran font 28px */
+        
+        .school-info p {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+        /* Subtitle dengan opacity 90% */
+        
+        nav {
+            background: #2a5298;
+            padding: 0;
+        }
+        /* Navigation bar dengan background biru */
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        /* List navigasi horizontal menggunakan flexbox */
+        
+        nav ul li {
+            margin: 0;
+        }
+        /* Margin list item navigasi 0 */
+        
+        nav ul li a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 15px 25px;
+            transition: all 0.3s ease;
+        }
+        /* Link navigasi dengan padding dan transisi */
+        
+        nav ul li a:hover,
+        nav ul li a.active {
+            background: #1e3c72;
+        }
+        /* Efek hover dan active pada link navigasi */
+        
+        .container {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+        /* Container utama dengan lebar maksimal 1200px */
+        
+        .content {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            display: none;
+        }
+        /* Container konten dengan background putih dan shadow */
+        
+        .content.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+        /* Class active untuk menampilkan konten dengan animasi */
+        
+        @keyframes fadeIn {
+            from { 
+                opacity: 0; 
+                transform: translateY(20px); 
+            }
+            to { 
+                opacity: 1; 
+                transform: translateY(0); 
+            }
+        }
+        /* Animasi fade in untuk konten yang muncul */
+        
+        h2 {
+            color: #1e3c72;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #2a5298;
+            font-size: 28px;
+        }
+        /* Heading 2 dengan warna biru dan garis bawah */
+        
+        h3 {
+            color: #2a5298;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            font-size: 22px;
+        }
+        /* Heading 3 dengan warna biru dan margin */
+        
+        .hero {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 60px 30px;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        /* Hero section dengan background gradient dan padding besar */
+        
+        .hero h2 {
+            color: white;
+            border: none;
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+        /* Judul hero dengan warna putih tanpa border */
+        
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 25px;
+            opacity: 0.95;
+        }
+        /* Paragraf hero dengan ukuran font 18px */
+        
+        .btn {
+            display: inline-block;
+            background: white;
+            color: #1e3c72;
+            padding: 12px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        /* Tombol dengan background putih dan border radius */
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        /* Efek hover tombol naik dengan shadow */
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 25px;
+        }
+        /* Grid layout responsive dengan minimal lebar 300px */
+        
+        .card {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 4px solid #2a5298;
+            transition: all 0.3s ease;
+        }
+        /* Card dengan background abu-abu terang dan border kiri */
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        /* Efek hover card naik dengan shadow */
+        
+        .card h3 {
+            color: #1e3c72;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+        /* Heading 3 dalam card dengan warna biru */
+        
+        .teacher-card {
+            text-align: center;
+            background: white;
+            border: 2px solid #e0e0e0;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        /* Card guru dengan border dan text center */
+        
+        .teacher-photo {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            border-radius: 50%;
+            margin: 0 auto 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 48px;
+            font-weight: bold;
+        }
+        /* Foto guru berbentuk lingkaran dengan background gradient */
+        
+        .teacher-card h3 {
+            margin-top: 10px;
+            margin-bottom: 5px;
+            font-size: 20px;
+        }
+        /* Nama guru dengan ukuran font 20px */
+        
+        .teacher-card p {
+            color: #666;
+            font-size: 14px;
+        }
+        /* Mata pelajaran dengan warna abu-abu */
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        /* Table dengan lebar 100% dan border collapse */
+        
+        table th {
+            background: #1e3c72;
+            color: white;
+            padding: 12px;
+            text-align: left;
+            font-weight: bold;
+        }
+        /* Header table dengan background biru dan teks putih */
+        
+        table td {
+            padding: 12px;
+            border-bottom: 1px solid #ddd;
+        }
+        /* Cell table dengan padding dan border bawah */
+        
+        table tr:hover {
+            background: #f5f5f5;
+        }
+        /* Efek hover pada baris table */
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        /* Grup form dengan margin bawah 20px */
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+            font-weight: bold;
+        }
+        /* Label form dengan display block dan font tebal */
+        
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+        /* Styling semua input form dengan border dan padding */
+        
+        input:focus,
+        textarea:focus,
+        select:focus {
+            outline: none;
+            border-color: #2a5298;
+        }
+        /* Efek focus pada input dengan border biru */
+        
+        textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        /* Textarea dengan resize vertical dan tinggi minimal */
+        
+        .success-box {
+            background: #d4edda;
+            color: #155724;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+            border-left: 4px solid #28a745;
+            display: none;
+        }
+        /* Box sukses dengan background hijau muda */
+        
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 30px;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        /* Container statistik dengan flexbox */
+        
+        .stat-item {
+            text-align: center;
+            padding: 20px;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            border-radius: 10px;
+            flex: 1;
+            min-width: 200px;
+        }
+        /* Item statistik dengan background gradient */
+        
+        .stat-number {
+            font-size: 48px;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 10px;
+        }
+        /* Angka statistik dengan ukuran besar */
+        
+        .stat-label {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+        /* Label statistik dengan opacity 90% */
+        
+        footer {
+            background: #1e3c72;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+        }
+        /* Footer dengan background biru gelap */
+        
+        footer p {
+            margin: 5px 0;
+        }
+        /* Paragraf footer dengan margin vertikal */
+    </style>
+    <!-- Penutup tag style -->
+</head>
+<!-- Penutup tag head -->
+
+<body>
+    <!-- Bagian body yang berisi konten yang terlihat -->
+    
+    <header>
+        <!-- Header website berisi logo dan info sekolah -->
+        
+        <div class="header-content">
+            <!-- Container untuk isi header -->
+            
+            <div class="logo-section">
+                <!-- Section untuk logo dan info sekolah -->
+                
+                <div class="logo">S</div>
+                <!-- Logo sekolah berbentuk lingkaran dengan huruf S -->
+                
+                <div class="school-info">
+                    <!-- Info sekolah berisi nama dan motto -->
+                    
+                    <h1>SMA PORTGAS D LUFFY</h1>
+                    <!-- Nama sekolah -->
+                    
+                    <p>Unggul dalam Prestasi, Berkarakter dalam Sikap</p>
+                    <!-- Motto sekolah -->
+                </div>
+                <!-- Penutup school-info -->
+            </div>
+            <!-- Penutup logo-section -->
+        </div>
+        <!-- Penutup header-content -->
+    </header>
+    <!-- Penutup header -->
+    
+    <nav>
+        <!-- Navigation bar untuk menu website -->
+        
+        <ul>
+            <!-- Unordered list untuk menu navigasi -->
+            
+            <li><a href="#" class="nav-link active" onclick="showPage('beranda')">Beranda</a></li>
+            <!-- Menu Beranda dengan class active sebagai halaman default -->
+            
+            <li><a href="#" class="nav-link" onclick="showPage('profil')">Profil</a></li>
+            <!-- Menu Profil -->
+            
+            <li><a href="#" class="nav-link" onclick="showPage('guru')">Guru</a></li>
+            <!-- Menu Guru -->
+            
+            <li><a href="#" class="nav-link" onclick="showPage('siswa')">Siswa</a></li>
+            <!-- Menu Siswa -->
+            
+            <li><a href="#" class="nav-link" onclick="showPage('jadwal')">Jadwal</a></li>
+            <!-- Menu Jadwal -->
+            
+            <li><a href="#" class="nav-link" onclick="showPage('prestasi')">Prestasi</a></li>
+            <!-- Menu Prestasi -->
+            
+            <li><a href="#" class="nav-link" onclick="showPage('pendaftaran')">Pendaftaran</a></li>
+            <!-- Menu Pendaftaran -->
+            
+            <li><a href="#" class="nav-link" onclick="showPage('kontak')">Kontak</a></li>
+            <!-- Menu Kontak -->
+        </ul>
+        <!-- Penutup ul -->
+    </nav>
+    <!-- Penutup nav -->
+    
+    <div class="container">
+        <!-- Container utama untuk semua konten halaman -->
+        
+        <div id="beranda" class="content active">
+            <!-- Halaman Beranda dengan class active agar langsung tampil -->
+            
+            <div class="hero">
+                <!-- Hero section untuk sambutan -->
+                
+                <h2>Selamat Datang di SMA PORTGAS D LUFFY</h2>
+                <!-- Judul sambutan -->
+                
+                <p>Membangun Generasi Cerdas, Berkarakter, dan Berprestasi</p>
+                <!-- Deskripsi singkat -->
+                
+                <a href="#" class="btn" onclick="showPage('pendaftaran')">Daftar Sekarang</a>
+                <!-- Tombol untuk ke halaman pendaftaran -->
+            </div>
+            <!-- Penutup hero -->
+            
+            <div class="stats">
+                <!-- Container untuk statistik sekolah -->
+                
+                <div class="stat-item">
+                    <!-- Item statistik siswa -->
+                    
+                    <span class="stat-number">1.200</span>
+                    <!-- Jumlah siswa -->
+                    
+                    <span class="stat-label">Siswa Aktif</span>
+                    <!-- Label statistik -->
+                </div>
+                <!-- Penutup stat-item -->
+                
+                <div class="stat-item">
+                    <!-- Item statistik guru -->
+                    
+                    <span class="stat-number">85</span>
+                    <!-- Jumlah guru -->
+                    
+                    <span class="stat-label">Tenaga Pengajar</span>
+                    <!-- Label statistik -->
+                </div>
+                <!-- Penutup stat-item -->
+                
+                <div class="stat-item">
+                    <!-- Item statistik prestasi -->
+                    
+                    <span class="stat-number">150+</span>
+                    <!-- Jumlah prestasi -->
+                    
+                    <span class="stat-label">Prestasi</span>
+                    <!-- Label statistik -->
+                </div>
+                <!-- Penutup stat-item -->
+                
+                <div class="stat-item">
+                    <!-- Item statistik akreditasi -->
+                    
+                    <span class="stat-number">A</span>
+                    <!-- Akreditasi sekolah -->
+                    
+                    <span class="stat-label">Akreditasi</span>
+                    <!-- Label statistik -->
+                </div>
+                <!-- Penutup stat-item -->
+            </div>
+            <!-- Penutup stats -->
+            
+            <h3>Berita Terkini</h3>
+            <!-- Judul section berita -->
+            
+            <div class="grid">
+                <!-- Grid untuk menampilkan berita -->
+                
+                <div class="card">
+                    <!-- Card berita pertama -->
+                    
+                    <h3>Penerimaan Siswa Baru 2025/2026</h3>
+                    <!-- Judul berita -->
+                    
+                    <p>Pendaftaran siswa baru telah dibuka! Daftar sekarang dan raih kesempatan emas untuk bergabung dengan kami. Kuota terbatas!</p>
+                    <!-- Isi berita -->
+                    
+                    <p><strong>Tanggal:</strong> 15 Oktober 2025</p>
+                    <!-- Tanggal berita -->
+                </div>
+                <!-- Penutup card -->
+                
+                <div class="card">
+                    <!-- Card berita kedua -->
+                    
+                    <h3>Juara Olimpiade Sains Nasional</h3>
+                    <!-- Judul berita -->
+                    
+                    <p>Siswa kami berhasil meraih medali emas dalam Olimpiade Sains Nasional bidang Fisika. Selamat atas prestasinya!</p>
+                    <!-- Isi berita -->
+                    
+                    <p><strong>Tanggal:</strong> 10 Oktober 2025</p>
+                    <!-- Tanggal berita -->
+                </div>
+                <!-- Penutup card -->
+                
+                <div class="card">
+                    <!-- Card berita ketiga -->
+                    
+                    <h3>Kegiatan Study Tour ke Jepang</h3>
+                    <!-- Judul berita -->
+                    
+                    <p>Siswa kelas XI mengikuti program study tour ke Jepang untuk meningkatkan wawasan budaya dan teknologi internasional.</p>
+                    <!-- Isi berita -->
+                    
+                    <p><strong>Tanggal:</strong> 5 Oktober 2025</p>
+                    <!-- Tanggal berita -->
+                </div>
+                <!-- Penutup card -->
+            </div>
+            <!-- Penutup grid -->
+        </div>
+        <!-- Penutup halaman beranda -->
+        
+        <div id="profil" class="content">
+            <!-- Halaman Profil Sekolah -->
+            
+            <h2>Profil Sekolah</h2>
+            <!-- Judul halaman -->
+            
+            <h3>Visi</h3>
+            <!-- Sub judul visi -->
+            
+            <p>Menjadi sekolah unggulan yang menghasilkan lulusan berkualitas, berkarakter, berakhlak mulia, berwawasan global, dan peduli lingkungan.</p>
+            <!-- Isi visi sekolah -->
+            
+            <h3>Misi</h3>
+            <!-- Sub judul misi -->
+            
+            <ul style="padding-left: 20px; margin-top: 10px;">
+                <!-- List misi dengan padding kiri -->
+                
+                <li style="margin-bottom: 10px;">Menyelenggarakan pendidikan berkualitas dengan kurikulum yang inovatif dan relevan</li>
+                <!-- Misi pertama -->
+                
+                <li style="margin-bottom: 10px;">Mengembangkan potensi siswa melalui kegiatan akademik dan non-akademik</li>
+                <!-- Misi kedua -->
+                
+                <li style="margin-bottom: 10px;">Membentuk karakter siswa yang berakhlak mulia dan bertanggung jawab</li>
+                <!-- Misi ketiga -->
+                
+                <li style="margin-bottom: 10px;">Menciptakan lingkungan belajar yang kondusif dan menyenangkan</li>
+                <!-- Misi keempat -->
+                
+                <li style="margin-bottom: 10px;">Membangun kerjasama dengan berbagai pihak untuk kemajuan sekolah</li>
+                <!-- Misi kelima -->
+            </ul>
+            <!-- Penutup ul -->
+            
+            <h3>Fasilitas</h3>
+            <!-- Sub judul fasilitas -->
+            
+            <div class="grid">
+                <!-- Grid untuk menampilkan fasilitas -->
+                
+                <div class="card">
+                    <!-- Card fasilitas pertama -->
+                    
+                    <h3>Laboratorium</h3>
+                    <!-- Nama fasilitas -->
+                    
+                    <p>Lab Fisika, Kimia, Biologi, dan Komputer dengan peralatan modern dan lengkap untuk mendukung pembelajaran praktikum.</p>
+                    <!-- Deskripsi fasilitas -->
+                </div>
+                <!-- Penutup card -->
+                
+                <div class="card">
+                    <!-- Card fasilitas kedua -->
+                    
+                    <h3>Perpustakaan</h3>
+                    <!-- Nama fasilitas -->
+                    
+                    <p>Perpustakaan dengan koleksi buku lebih dari 10.000 judul, ruang baca yang nyaman, dan akses digital library.</p>
+                    <!-- Deskripsi fasilitas -->
+                </div>
+                <!-- Penutup card -->
+                
+                <div class="card">
+                    <!-- Card fasilitas ketiga -->
+                    
+                    <h3>Lapangan Olahraga</h3>
+                    <!-- Nama fasilitas -->
+                    
+                    <p>Lapangan basket, voli, futsal, dan track lari untuk menunjang kegiatan olahraga dan ekstrakurikuler siswa.</p>
+                    <!-- Deskripsi fasilitas -->
+                </div>
+                <!-- Penutup card -->
+                
+                <div class="card">
+                    <!-- Card fasilitas keempat -->
+                    
+                    <h3>Aula Serbaguna</h3>
+                    <!-- Nama fasilitas -->
+                    
+                    <p>Aula berkapasitas 500 orang dengan AC dan sound system lengkap untuk berbagai acara dan kegiatan sekolah.</p>
+                    <!-- Deskripsi fasilitas -->
+                </div>
+                <!-- Penutup card -->
+                
+                <div class="card">
+                    <!-- Card fasilitas kelima -->
+                    
+                    <h3>Kantin</h3>
+                    <!-- Nama fasilitas -->
+                    
+                    <p>Kantin bersih dan sehat dengan berbagai pilihan makanan bergizi untuk siswa dan guru.</p>
+                    <!-- Deskripsi fasilitas -->
+                </div>
+                <!-- Penutup card -->
+                
+                <div class="card">
+                    <!-- Card fasilitas keenam -->
+                    
+                    <h3>Ruang Kelas</h3>
+                    <!-- Nama fasilitas -->
+                    
+                    <p>36 ruang kelas ber-AC dengan LCD proyektor, wifi, dan peralatan pembelajaran modern.</p>
+                    <!-- Deskripsi fasilitas -->
+                </div>
+                <!-- Penutup card -->
+            </div>
+            <!-- Penutup grid -->
+        </div>
+        <!-- Penutup halaman profil -->
+        
+        <div id="guru" class="content">
+            <!-- Halaman Data Guru -->
+            
+            <h2>Tenaga Pengajar</h2>
+            <!-- Judul halaman -->
+            
+            <p>Guru-guru kami adalah tenaga pendidik profesional dan berpengalaman yang siap membimbing siswa meraih prestasi terbaik.</p>
+            <!-- Deskripsi tenaga pengajar -->
+            
+            <div class="grid">
+                <!-- Grid untuk menampilkan data guru -->
+                
+                <div class="teacher-card">
+                    <!-- Card guru pertama -->
+                    
+                    <div class="teacher-photo">A</div>
+                    <!-- Inisial guru -->
+                    
+                    <h3>Dr. Ir Chelsea Limbong, S.T, M.T </h3>
+                    <!-- Nama guru -->
+                    
+                    <p>Kepala Sekolah</p>
+                    <!-- Jabatan -->
+                    
+                    <p style="margin-top: 10px; font-size: 13px;">S3 Teknik Pertambangan dan Perminyakan - 25 Tahun Pengalaman</p>
+                    <!-- Kualifikasi dan pengalaman -->
+                </div>
+                <!-- Penutup teacher-card -->
+                
+                <div class="teacher-card">
+                    <!-- Card guru kedua -->
+                    
+                    <div class="teacher-photo">B</div>
+                    <!-- Inisial guru -->
+                    
+                    <h3>Dian Margareth Pandjaitan, S.Tr.KomGPT, M.Pd</h3>
+                    <!-- Nama guru -->
+                    
+                    <p>Matematika</p>
+                    <!-- Mata pelajaran -->
+                    
+                    <p style="margin-top: 10px; font-size: 13px;">S1 Teknologi Rekayasa Perangkat Lunak, S2 Pendidikan Matematika - 15 Tahun Pengalaman</p>
+                    <!-- Kualifikasi dan pengalaman -->
+                </div>
+                <!-- Penutup teacher-card -->
+                
+                <div class="teacher-card">
+                    <!-- Card guru ketiga -->
+                    
+                    <div class="teacher-photo">C</div>
+                    <!-- Inisial guru -->
+                    
+                    <h3>Maura Shireen Pardosi, S.Tr.Kom.AI S.TehCampur, M.Pd </h3>
+                    <!-- Nama guru -->
+                    
+                    <p>Bahasa Inggris</p>
+                    <!-- Mata pelajaran -->
+                    
+                    <p style="margin-top: 10px; font-size: 13px;">S1 Teknologi Rekayasa Perangkat Lunak, S2 Linguistik - 12 Tahun Pengalaman</p>
+                    <!-- Kualifikasi dan pengalaman -->
+                </div>
+                <!-- Penutup teacher-card -->
+                
+                <div class="teacher-card">
+                    <!-- Card guru keempat -->
+                    
+                    <div class="teacher-photo">D</div>
+                    <!-- Inisial guru -->
+                    
+                    <h3>Grace Yulia Sidabutar, S.Tr.Kom.Del, M.pd</h3>
+                    <!-- Nama guru -->
+                    
+                    <p>Fisika</p>
+                    <!-- Mata pelajaran -->
+                    
+                    <p style="margin-top: 10px; font-size: 13px;">S1 Teknologi Rekayasa Perangkat Lunak, S2 Fisika - 10 Tahun Pengalaman</p>
+                    <!-- Kualifikasi dan pengalaman -->
+                </div>
+                <!-- Penutup teacher-card -->
+                
+                <div class="teacher-card">
+                    <!-- Card guru kelima -->
+                    
+                    <div class="teacher-photo">E</div>
+                    <!-- Inisial guru -->
+                    
+                    <h3>Debora Angelika Saragih, S.Tr.Kom.Maag, M.Pd</h3>
+                    <!-- Nama guru -->
+                    
+                    <p>Kimia</p>
+                    <!-- Mata pelajaran -->
+                    
+                    <p style="margin-top: 10px; font-size: 13px;">S1 Teknologi Rekayasa Perangkat Lunak, S1 Pendidikan Kimia - 8 Tahun Pengalaman</p>
+                    <!-- Kualifikasi dan pengalaman -->
+                </div>
+                <!-- Penutup teacher-card -->
+                
+                <div class="teacher-card">
+                    <!-- Card guru keenam -->
+                    
+                    <div class="teacher-photo">F</div>
+                    <!-- Inisial guru -->
+                    
+                    <h3>Si Sean Na Bisuk, S.Kom</h3>
+                    <!-- Nama guru -->
+                    
+                    <p>Informatika</p>
+                    <!-- Mata pelajaran -->
+                    
+                    <p style="margin-top: 10px; font-size: 13px;">S1 Ilmu Komputer - 7 Tahun Pengalaman</p>
+                    <!-- Kualifikasi dan pengalaman -->
+                </div>
+                <!-- Penutup teacher-card -->
+            </div>
+            <!-- Penutup grid -->
+        </div>
+        <!-- Penutup halaman guru -->
+        
+        <div id="siswa" class="content">
+            <!-- Halaman Data Siswa -->
+            
+            <h2>Data Siswa</h2>
+            <!-- Judul halaman -->
+            
+            <h3>Jumlah Siswa per Kelas</h3>
+            <!-- Sub judul -->
+            
+            <table>
+                <!-- Table untuk data siswa per kelas -->
+                
+                <thead>
+                    <!-- Header table -->
+                    
+                    <tr>
+                        <!-- Baris header -->
+                        
+                        <th>Kelas</th>
+                        <!-- Kolom kelas -->
+                        
+                        <th>Jumlah Siswa</th>
+                        <!-- Kolom jumlah siswa -->
+                        
+                        <th>Wali Kelas</th>
+                        <!-- Kolom wali kelas -->
+                    </tr>
+                    <!-- Penutup tr -->
+                </thead>
+                <!-- Penutup thead -->
+                
+                <tbody>
+                    <!-- Body table berisi data -->
+                    
+                    <tr>
+                        <!-- Baris data kelas X -->
+                        
+                        <td>X</td>
+                        <!-- Tingkat kelas -->
+                        
+                        <td>12 Rombel</td>
+                        <!-- Jumlah rombel -->
+                        
+                        <td>420 Siswa</td>
+                        <!-- Total siswa -->
+                        
+                        <td>12 Wali Kelas</td>
+                        <!-- Jumlah wali kelas -->
+                    </tr>
+                    <!-- Penutup tr -->
+                    
+                    <tr>
+                        <!-- Baris data kelas XI -->
+                        
+                        <td>XI</td>
+                        <!-- Tingkat kelas -->
+                        
+                        <td>12 Rombel</td>
+                        <!-- Jumlah rombel -->
+                        
+                        <td>408 Siswa</td>
+                        <!-- Total siswa -->
+                        
+                        <td>12 Wali Kelas</td>
+                        <!-- Jumlah wali kelas -->
+                    </tr>
+                    <!-- Penutup tr -->
+                    
+                    <tr>
+                        <!-- Baris data kelas XII -->
+                        
+                        <td>XII</td>
+                        <!-- Tingkat kelas -->
+                        
+                        <td>12 Rombel</td>
+                        <!-- Jumlah rombel -->
+                        
+                        <td>372 Siswa</td>
+                        <!-- Total siswa -->
+                        
+                        <td>12 Wali Kelas</td>
+                        <!-- Jumlah wali kelas -->
+                    </tr>
+                    <!-- Penutup tr -->
+                </tbody>
+                <!-- Penutup tbody -->
+            </table>
+            <!-- Penutup table -->
+            
+            <h3>Ekstrakurikuler</h3>
+            <!-- Sub judul ekstrakurikuler -->
+            
+            <div class="grid">
+                <!-- Grid untuk menampilkan ekstrakurikuler -->
+                
+                <div class="card">
+                    <!-- Card ekskul pertama -->
+                    
+                    <h3>Olahraga</h3>
+                    <!-- Kategori ekskul -->
+                    
+                    <p>Basket, Futsal, Voli, Badminton, Renang, Taekwondo</p>
+                    <!-- Daftar ekskul olahraga -->
+                </div>
+                <!-- Penutup card -->
+                
+                <div class="card">
+                    <!-- Card ekskul kedua -->
+                    
+                    <h3>Seni & Budaya</h3>
+                    <!-- Kategori ekskul -->
+                    
+                    <p>Paduan Suara, Tari Tradisional, Band, Teater, Seni Rupa</p>
+                    <!-- Daftar ekskul seni -->
+                </div>
+                <!-- Penutup card -->
+                
+                <div class="card">
+                    <!-- Card ekskul ketiga -->
+                    
+                    <h3>Sains & Teknologi</h3>
+                    <!-- Kategori ekskul -->
+                    
+                    <p>Robotika, Coding Club, KIR, Astronomi</p>
+                    <!-- Daftar ekskul sains -->
+                </div>
+                <!-- Penutup card -->
+                
+                <div class="card">
+                    <!-- Card ekskul keempat -->
+                    
+                    <h3>Bahasa</h3>
+                    <!-- Kategori ekskul -->
+                    
+                    <p>English Club, Japanese Club, Debat, Jurnalistik</p>
+                    <!-- Daftar ekskul bahasa -->
+                </div>
+                <!-- Penutup card -->
+            </div>
+            <!-- Penutup grid -->
+        </div>
+        <!-- Penutup halaman siswa -->
+        
+        <div id="jadwal" class="content">
+            <!-- Halaman Jadwal Pelajaran -->
+            
+            <h2>Jadwal Pelajaran Kelas X-1</h2>
+            <!-- Judul halaman -->
+            
+            <table>
+                <!-- Table jadwal pelajaran -->
+                
+                <thead>
+                    <!-- Header table -->
+                    
+                    <tr>
+                        <!-- Baris header -->
+                        
+                        <th>Waktu</th>
+                        <!-- Kolom waktu -->
+                        
+                        <th>Senin</th>
+                        <!-- Kolom hari Senin -->
+                        
+                        <th>Selasa</th>
+                        <!-- Kolom hari Selasa -->
+                        
+                        <th>Rabu</th>
+                        <!-- Kolom hari Rabu -->
+                        
+                        <th>Kamis</th>
+                        <!-- Kolom hari Kamis -->
+                        
+                        <th>Jumat</th>
+                        <!-- Kolom hari Jumat -->
+                    </tr>
+                    <!-- Penutup tr -->
+                </thead>
+                <!-- Penutup thead -->
+                
+                <tbody>
+                    <!-- Body table berisi jadwal -->
+                    
+                    <tr>
+                        <!-- Baris jam pertama -->
+                        
+                        <td>07.00 - 08.30</td>
+                        <!-- Waktu jam pertama -->
+                        
+                        <td>Matematika</td>
+                        <!-- Mapel Senin -->
+                        
+                        <td>Bahasa Indonesia</td>
+                        <!-- Mapel Selasa -->
+                        
+                        <td>Fisika</td>
+                        <!-- Mapel Rabu -->
+                        
+                        <td>Kimia</td>
+                        <!-- Mapel Kamis -->
+                        
+                        <td>Agama</td>
+                        <!-- Mapel Jumat -->
+                    </tr>
+                    <!-- Penutup tr -->
+                    
+                    <tr>
+                        <!-- Baris jam kedua -->
+                        
+                        <td>08.30 - 10.00</td>
+                        <!-- Waktu jam kedua -->
+                        
+                        <td>Bahasa Inggris</td>
+                        <!-- Mapel Senin -->
+                        
+                        <td>Matematika</td>
+                        <!-- Mapel Selasa -->
+                        
+                        <td>Biologi</td>
+                        <!-- Mapel Rabu -->
+                        
+                        <td>Bahasa Inggris</td>
+                        <!-- Mapel Kamis -->
+                        
+                        <td>PKN</td>
+                        <!-- Mapel Jumat -->
+                    </tr>
+                    <!-- Penutup tr -->
+                    
+                    <tr>
+                        <!-- Baris istirahat -->
+                        
+                        <td>10.00 - 10.15</td>
+                        <!-- Waktu istirahat -->
+                        
+                        <td colspan="5" style="text-align: center; background: #f0f0f0; font-weight: bold;">ISTIRAHAT</td>
+                        <!-- Kolom istirahat yang menggabungkan 5 kolom -->
+                    </tr>
+                    <!-- Penutup tr -->
+                    
+                    <tr>
+                        <!-- Baris jam ketiga -->
+                        
+                        <td>10.15 - 11.45</td>
+                        <!-- Waktu jam ketiga -->
+                        
+                        <td>Sejarah</td>
+                        <!-- Mapel Senin -->
+                        
+                        <td>Fisika</td>
+                        <!-- Mapel Selasa -->
+                        
+                        <td>Bahasa Indonesia</td>
+                        <!-- Mapel Rabu -->
+                        
+                        <td>Matematika</td>
+                        <!-- Mapel Kamis -->
+                        
+                        <td>Seni Budaya</td>
+                        <!-- Mapel Jumat -->
+                    </tr>
+                    <!-- Penutup tr -->
+                    
+                    <tr>
+                        <!-- Baris jam keempat -->
+                        
+                        <td>11.45 - 13.15</td>
+                        <!-- Waktu jam keempat -->
+                        
+                        <td>Penjas</td>
+                        <!-- Mapel Senin -->
+                        
+                        <td>Kimia</td>
+                        <!-- Mapel Selasa -->
+                        
+                        <td>Informatika</td>
+                        <!-- Mapel Rabu -->
+                        
+                        <td>Geografi</td>
+                        <!-- Mapel Kamis -->
+                        
+                        <td>-</td>
+                        <!-- Kosong di Jumat -->
+                    </tr>
+                    <!-- Penutup tr -->
+                </tbody>
+                <!-- Penutup tbody -->
+            </table>
+            <!-- Penutup table -->
+            
+            <h3 style="margin-top: 30px;">Kalender Akademik</h3>
+            <!-- Sub judul kalender akademik -->
+            
+            <div class="grid">
+                <!-- Grid untuk kalender akademik -->
+                
+                <div class="card">
+                    <!-- Card event pertama -->
+                    
+                    <h3>Semester Ganjil</h3>
+                    <!-- Judul semester -->
+                    
+                    <p><strong>15 Juli - 23 Desember 2025</strong></p>
+                    <!-- Periode semester -->
+                    
+                    <p>Kegiatan pembelajaran semester ganjil tahun ajaran 2025/2026</p>
+                    <!-- Deskripsi -->
+                </div>
+                <!-- Penutup card -->
+                
+                <div class="card">
+                    <!-- Card event kedua -->
+                    
+                    <h3>Ujian Tengah Semester</h3>
+                    <!-- Judul event -->
+                    
+                    <p><strong>1-5 Oktober 2025</strong></p>
+                    <!-- Tanggal event -->
+                    
+                    <p>Pelaksanaan UTS untuk semua tingkat kelas</p>
+                    <!-- Deskripsi -->
+                </div>
+                <!-- Penutup card -->
+                
+                <div class="card">
+                    <!-- Card event ketiga -->
+                    
+                    <h3>Ujian Akhir Semester</h3>
+                    <!-- Judul event -->
+                    
+                    <p><strong>10-17 Desember 2025</strong></p>
+                    <!-- Tanggal event -->
+                    
+                    <p>Pelaksanaan UAS semester ganjil</p>
+                    <!-- Deskripsi -->
+                </div>
+                <!-- Penutup card -->
+            </div>
+            <!-- Penutup grid -->
+        </div>
+        <!-- Penutup halaman jadwal -->
+        
+        <div id="prestasi" class="content">
+            <!-- Halaman Prestasi -->
+            
+            <h2>Prestasi Sekolah</h2>
+            <!-- Judul halaman -->
+            
+            <h3>Prestasi Akademik</h3>
+            <!-- Sub judul prestasi akademik -->
+            
+            <div class="grid">
+                <!-- Grid untuk prestasi akademik -->
+                
+                <div class="card">
+                    <!-- Card prestasi pertama -->
+                    
+                    <h3>🥇 Juara 1 OSN Fisika</h3>
+                    <!-- Judul prestasi dengan emoji medali -->
+                    
+                    <p><strong>Tingkat:</strong> Nasional</p>
+                    <!-- Tingkat kompetisi -->
+                    
+                    <p><strong>Tahun:</strong> 2025</p>
+                    <!-- Tahun perolehan -->
+                    
+                    <p><strong>Siswa:</strong> Max Verstappen (XII IPA 1)</p>
+                    <!-- Nama siswa peraih -->
+                </div>
+                <!-- Penutup card -->
+                
+                <div class="card">
+                    <!-- Card prestasi kedua -->
+                    
+                    <h3>🥈 Juara 2 Olimpiade Matematika</h3>
+                    <!-- Judul prestasi -->
+                    
+                    <p><strong>Tingkat:</strong> Provinsi</p>
+                    <!-- Tingkat kompetisi -->
+                    
+                    <p><strong>Tahun:</strong> 2025</p>
+                    <!-- Tahun perolehan -->
+                    
+                    <p><strong>Siswa:</strong> Charles Leclerc (XI IPA 2)</p>
+                    <!-- Nama siswa peraih -->
+                </div>
+                <!-- Penutup card -->
+                
+                <div class="card">
+                    <!-- Card prestasi ketiga -->
+                    
+                    <h3>🥇 Juara 1 English Debate</h3>
+                    <!-- Judul prestasi -->
+                    
+                    <p><strong>Tingkat:</strong> Nasional</p>
+                    <!-- Tingkat kompetisi -->
+                    
+                    <p><strong>Tahun:</strong> 2024</p>
+                    <!-- Tahun perolehan -->
+                    
+                    <p><strong>Tim:</strong> English Club SMA PORTGAS D LUFFY</p>
+                    <!-- Nama tim peraih -->
+                </div>
+                <!-- Penutup card -->
+            </div>
+            <!-- Penutup grid -->
+            
+            <h3>Prestasi Non-Akademik</h3>
+            <!-- Sub judul prestasi non-akademik -->
+            
+            <div class="grid">
+                <!-- Grid untuk prestasi non-akademik -->
+                
+                <div class="card">
+                    <!-- Card prestasi olahraga pertama -->
+                    
+                    <h3>🏆 Juara 1 Basket Putra</h3>
+                    <!-- Judul prestasi -->
+                    
+                    <p><strong>Tingkat:</strong> Kota sitoluama</p>
+                    <!-- Tingkat kompetisi -->
+                    
+                    <p><strong>Tahun:</strong> 2025</p>
+                    <!-- Tahun perolehan -->
+                    
+                    <p><strong>Tim:</strong> Tim Basket SMA PORTGAS D LUFFY</p>
+                    <!-- Nama tim peraih -->
+                </div>
+                <!-- Penutup card -->
+                
+                <div class="card">
+                    <!-- Card prestasi seni pertama -->
+                    
+                    <h3>🎵 Juara 2 Paduan Suara</h3>
+                    <!-- Judul prestasi -->
+                    
+                    <p><strong>Tingkat:</strong> Provinsi</p>
+                    <!-- Tingkat kompetisi -->
+                    
+                    <p><strong>Tahun:</strong> 2025</p>
+                    <!-- Tahun perolehan -->
+                    
+                    <p><strong>Tim:</strong> Paduan Suara Marbisuk</p>
+                    <!-- Nama tim peraih -->
+                </div>
+                <!-- Penutup card -->
+                
+                <div class="card">
+                    <!-- Card prestasi teknologi -->
+                    
+                    <h3>🤖 Juara 3 Robotika</h3>
+                    <!-- Judul prestasi -->
+                    
+                    <p><strong>Tingkat:</strong> Nasional</p>
+                    <!-- Tingkat kompetisi -->
+                    
+                    <p><strong>Tahun:</strong> 2024</p>
+                    <!-- Tahun perolehan -->
+                    
+                    <p><strong>Tim:</strong> Robotics Team SMA PORTGAS D LUFFY</p>
+                    <!-- Nama tim peraih -->
+                </div>
+                <!-- Penutup card -->
+            </div>
+            <!-- Penutup grid -->
+        </div>
+        <!-- Penutup halaman prestasi -->
+        
+        <div id="pendaftaran" class="content">
+            <!-- Halaman Pendaftaran -->
+            
+            <h2>Formulir Pendaftaran Siswa Baru</h2>
+            <!-- Judul halaman -->
+            
+            <p>Silakan isi formulir di bawah ini untuk mendaftar sebagai siswa baru SMA PORTGAS D LUFFY. Data yang Anda masukkan akan kami proses untuk tahap seleksi.</p>
+            <!-- Deskripsi pendaftaran -->
+            
+            <div class="success-box" id="successMessage">
+                <!-- Box untuk pesan sukses pendaftaran -->
+            </div>
+            <!-- Penutup success-box -->
+            
+            <form onsubmit="handlePendaftaran(event)">
+                <!-- Form pendaftaran dengan event handler -->
+                
+                <h3>Data Pribadi</h3>
+                <!-- Sub judul data pribadi -->
+                
+                <div class="form-group">
+                    <!-- Grup input nama lengkap -->
+                    
+                    <label for="namaLengkap">Nama Lengkap *</label>
+                    <!-- Label nama lengkap -->
+                    
+                    <input type="text" id="namaLengkap" required placeholder="Masukkan nama lengkap sesuai ijazah">
+                    <!-- Input nama lengkap dengan validasi required -->
+                </div>
+                <!-- Penutup form-group -->
+                
+                <div class="form-group">
+                    <!-- Grup input NISN -->
+                    
+                    <label for="nisn">NISN *</label>
+                    <!-- Label NISN -->
+                    
+                    <input type="text" id="nisn" required placeholder="Nomor Induk Siswa Nasional (10 digit)" maxlength="10">
+                    <!-- Input NISN dengan maksimal 10 karakter -->
+                </div>
+                <!-- Penutup form-group -->
+                
+                <div class="form-group">
+                    <!-- Grup input tempat lahir -->
+                    
+                    <label for="tempatLahir">Tempat Lahir *</label>
+                    <!-- Label tempat lahir -->
+                    
+                    <input type="text" id="tempatLahir" required placeholder="Kota tempat lahir">
+                    <!-- Input tempat lahir -->
+                </div>
+                <!-- Penutup form-group -->
+                
+                <div class="form-group">
+                    <!-- Grup input tanggal lahir -->
+                    
+                    <label for="tanggalLahir">Tanggal Lahir *</label>
+                    <!-- Label tanggal lahir -->
+                    
+                    <input type="date" id="tanggalLahir" required>
+                    <!-- Input type date untuk tanggal lahir -->
+                </div>
+                <!-- Penutup form-group -->
+                
+                <div class="form-group">
+                    <!-- Grup select jenis kelamin -->
+                    
+                    <label for="jenisKelamin">Jenis Kelamin *</label>
+                    <!-- Label jenis kelamin -->
+                    
+                    <select id="jenisKelamin" required>
+                        <!-- Dropdown jenis kelamin -->
+                        
+                        <option value="">Pilih Jenis Kelamin</option>
+                        <!-- Option default -->
+                        
+                        <option value="Laki-laki">Laki-laki</option>
+                        <!-- Option laki-laki -->
+                        
+                        <option value="Perempuan">Perempuan</option>
+                        <!-- Option perempuan -->
+                    </select>
+                    <!-- Penutup select -->
+                </div>
+                <!-- Penutup form-group -->
+                
+                <div class="form-group">
+                    <!-- Grup input alamat -->
+                    
+                    <label for="alamat">Alamat Lengkap *</label>
+                    <!-- Label alamat -->
+                    
+                    <textarea id="alamat" required placeholder="Masukkan alamat lengkap"></textarea>
+                    <!-- Textarea untuk alamat -->
+                </div>
+                <!-- Penutup form-group -->
+                
+                <h3>Data Kontak</h3>
+                <!-- Sub judul data kontak -->
+                
+                <div class="form-group">
+                    <!-- Grup input nomor telepon -->
+                    
+                    <label for="noTelp">Nomor Telepon *</label>
+                    <!-- Label nomor telepon -->
+                    
+                    <input type="tel" id="noTelp" required placeholder="Contoh: 08123456789">
+                    <!-- Input telepon dengan placeholder -->
+                </div>
+                <!-- Penutup form-group -->
+                
+                <div class="form-group">
+                    <!-- Grup input email -->
+                    
+                    <label for="email">Email *</label>
+                    <!-- Label email -->
+                    
+                    <input type="email" id="email" required placeholder="contoh@email.com">
+                    <!-- Input email dengan validasi format -->
+                </div>
+                <!-- Penutup form-group -->
+                
+                <h3>Data Orang Tua/Wali</h3>
+                <!-- Sub judul data orang tua -->
+                
+                <div class="form-group">
+                    <!-- Grup input nama ayah -->
+                    
+                    <label for="namaAyah">Nama Ayah *</label>
+                    <!-- Label nama ayah -->
+                    
+                    <input type="text" id="namaAyah" required placeholder="Nama lengkap ayah">
+                    <!-- Input nama ayah -->
+                </div>
+                <!-- Penutup form-group -->
+                
+                <div class="form-group">
+                    <!-- Grup input nama ibu -->
+                    
+                    <label for="namaIbu">Nama Ibu *</label>
+                    <!-- Label nama ibu -->
+                    
+                    <input type="text" id="namaIbu" required placeholder="Nama lengkap ibu">
+                    <!-- Input nama ibu -->
+                </div>
+                <!-- Penutup form-group -->
+                
+                <div class="form-group">
+                    <!-- Grup input telepon orang tua -->
+                    
+                    <label for="telpOrtu">No. Telepon Orang Tua *</label>
+                    <!-- Label telepon orang tua -->
+                    
+                    <input type="tel" id="telpOrtu" required placeholder="Nomor yang bisa dihubungi">
+                    <!-- Input telepon orang tua -->
+                </div>
+                <!-- Penutup form-group -->
+                
+                <h3>Data Akademik</h3>
+                <!-- Sub judul data akademik -->
+                
+                <div class="form-group">
+                    <!-- Grup input asal sekolah -->
+                    
+                    <label for="asalSekolah">Asal Sekolah *</label>
+                    <!-- Label asal sekolah -->
+                    
+                    <input type="text" id="asalSekolah" required placeholder="Nama sekolah SMP/MTs">
+                    <!-- Input asal sekolah -->
+                </div>
+                <!-- Penutup form-group -->
+                
+                <div class="form-group">
+                    <!-- Grup input nilai rata-rata -->
+                    
+                    <label for="nilaiRata">Nilai Rata-rata Rapor *</label>
+                    <!-- Label nilai rata-rata -->
+                    
+                    <input type="number" id="nilaiRata" required placeholder="Contoh: 85.5" step="0.01" min="0" max="100">
+                    <!-- Input number untuk nilai dengan step desimal -->
+                </div>
+                <!-- Penutup form-group -->
+                
+                <div class="form-group">
+                    <!-- Grup select jurusan -->
+                    
+                    <label for="jurusan">Pilihan Jurusan *</label>
+                    <!-- Label jurusan -->
+                    
+                    <select id="jurusan" required>
+                        <!-- Dropdown jurusan -->
+                        
+                        <option value="">Pilih Jurusan</option>
+                        <!-- Option default -->
+                        
+                        <option value="IPA">IPA (Ilmu Pengetahuan Alam)</option>
+                        <!-- Option IPA -->
+                        
+                        <option value="IPS">IPS (Ilmu Pengetahuan Sosial)</option>
+                        <!-- Option IPS -->
+                    </select>
+                    <!-- Penutup select -->
+                </div>
+                <!-- Penutup form-group -->
+                
+                <button type="submit" class="btn">Kirim Pendaftaran</button>
+                <!-- Tombol submit pendaftaran -->
+            </form>
+            <!-- Penutup form -->
+        </div>
+        <!-- Penutup halaman pendaftaran -->
+        
+        <div id="kontak" class="content">
+            <!-- Halaman Kontak -->
+            
+            <h2>Hubungi Kami</h2>
+            <!-- Judul halaman -->
+            
+            <div class="grid">
+                <!-- Grid untuk info kontak -->
+                
+                <div class="card">
+                    <!-- Card alamat -->
+                    
+                    <h3>📍 Alamat</h3>
+                    <!-- Judul dengan emoji lokasi -->
+                    
+                    <p>Jl. Kapan Kita IB Bang<br>Sitoluama, Sumatera Utara 12345<br>Indonesia</p>
+                    <!-- Alamat lengkap dengan line break -->
+                </div>
+                <!-- Penutup card -->
+                
+                <div class="card">
+                    <!-- Card telepon -->
+                    
+                    <h3>📞 Telepon</h3>
+                    <!-- Judul dengan emoji telepon -->
+                    
+                    <p><strong>Telepon:</strong> (022) 250-2654<br><strong>Fax:</strong> (022) 250-0697<br><strong>WhatsApp:</strong> 0819-5244-6621</p>
+                    <!-- Nomor kontak dengan line break -->
+                </div>
+                <!-- Penutup card -->
+                
+                <div class="card">
+                    <!-- Card email -->
+                    
+                    <h3>✉️ Email</h3>
+                    <!-- Judul dengan emoji email -->
+                    
+                    <p><strong>Email Resmi:</strong><br>info@smaportgasdluffy.sch.id<br><strong>Email Pendaftaran:</strong><br>ppdb@smaportgasdluffy.sch.id</p>
+                    <!-- Email dengan line break -->
+                </div>
+                <!-- Penutup card -->
+            </div>
+            <!-- Penutup grid -->
+            
+            <h3>Kirim Pesan</h3>
+            <!-- Sub judul form pesan -->
+            
+            <div class="success-box" id="contactSuccess">
+                <!-- Box untuk pesan sukses kontak -->
+            </div>
+            <!-- Penutup success-box -->
+            
+            <form onsubmit="handleKontak(event)">
+                <!-- Form kontak dengan event handler -->
+                
+                <div class="form-group">
+                    <!-- Grup input nama -->
+                    
+                    <label for="contactNama">Nama Lengkap *</label>
+                    <!-- Label nama -->
+                    
+                    <input type="text" id="contactNama" required placeholder="Nama Anda">
+                    <!-- Input nama -->
+                </div>
+                <!-- Penutup form-group -->
+                
+                <div class="form-group">
+                    <!-- Grup input email kontak -->
+                    
+                    <label for="contactEmail">Email *</label>
+                    <!-- Label email -->
+                    
+                    <input type="email" id="contactEmail" required placeholder="email@contoh.com">
+                    <!-- Input email -->
+                </div>
+                <!-- Penutup form-group -->
+                
+                <div class="form-group">
+                    <!-- Grup input subjek -->
+                    
+                    <label for="contactSubjek">Subjek *</label>
+                    <!-- Label subjek -->
+                    
+                    <input type="text" id="contactSubjek" required placeholder="Subjek pesan">
+                    <!-- Input subjek -->
+                </div>
+                <!-- Penutup form-group -->
+                
+                <div class="form-group">
+                    <!-- Grup textarea pesan -->
+                    
+                    <label for="contactPesan">Pesan *</label>
+                    <!-- Label pesan -->
+                    
+                    <textarea id="contactPesan" required placeholder="Tulis pesan Anda disini..."></textarea>
+                    <!-- Textarea untuk pesan -->
+                </div>
+                <!-- Penutup form-group -->
+                
+                <button type="submit" class="btn">Kirim Pesan</button>
+                <!-- Tombol submit pesan -->
+            </form>
+            <!-- Penutup form -->
+        </div>
+        <!-- Penutup halaman kontak -->
+    </div>
+    <!-- Penutup container -->
+    
+    <footer>
+        <!-- Footer website -->
+        
+        <p>&copy; 2025 SMA PORTGAS D LUFFY. All Rights Reserved.</p>
+        <!-- Copyright -->
+        
+        <p>Dibuat dengan ❤️ untuk pendidikan Indonesia</p>
+        <!-- Tagline footer -->
+    </footer>
+    <!-- Penutup footer -->
+    
+    <script>
+        // Bagian JavaScript untuk membuat website interaktif
+        
+        // Fungsi untuk menampilkan halaman berdasarkan id
+        function showPage(pageId) {
+            // Ambil semua elemen dengan class content
+            const pages = document.querySelectorAll('.content');
+            // querySelectorAll mengambil semua elemen yang cocok dengan selector
+            
+            // Loop semua halaman dan sembunyikan
+            pages.forEach(page => {
+                page.classList.remove('active');
+                // Hapus class active dari semua halaman
+            });
+            
+            // Tampilkan halaman yang dipilih
+            document.getElementById(pageId).classList.add('active');
+            // Tambah class active ke halaman yang dipilih
+            
+            // Update active state di navigasi
+            const navLinks = document.querySelectorAll('.nav-link');
+            // Ambil semua link navigasi
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                // Hapus class active dari semua link
+            });
+            
+            // Tambah class active ke link yang diklik
+            event.target.classList.add('active');
+            // event.target adalah elemen yang diklik
+            
+            // Scroll ke atas halaman
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            // Scroll smooth ke posisi paling atas
+        }
+        
+        // Fungsi untuk handle form pendaftaran
+        function handlePendaftaran(event) {
+            event.preventDefault();
+            // Mencegah form reload halaman
+            
+            // Ambil semua nilai dari form
+            const data = {
+                namaLengkap: document.getElementById('namaLengkap').value,
+                // Ambil nilai nama lengkap dari input
+                
+                nisn: document.getElementById('nisn').value,
+                // Ambil nilai NISN dari input
+                
+                tempatLahir: document.getElementById('tempatLahir').value,
+                // Ambil nilai tempat lahir dari input
+                
+                tanggalLahir: document.getElementById('tanggalLahir').value,
+                // Ambil nilai tanggal lahir dari input
+                
+                jenisKelamin: document.getElementById('jenisKelamin').value,
+                // Ambil nilai jenis kelamin dari dropdown
+                
+                alamat: document.getElementById('alamat').value,
+                // Ambil nilai alamat dari textarea
+                
+                noTelp: document.getElementById('noTelp').value,
+                // Ambil nilai nomor telepon dari input
+                
+                email: document.getElementById('email').value,
+                // Ambil nilai email dari input
+                
+                namaAyah: document.getElementById('namaAyah').value,
+                // Ambil nilai nama ayah dari input
+                
+                namaIbu: document.getElementById('namaIbu').value,
+                // Ambil nilai nama ibu dari input
+                
+                telpOrtu: document.getElementById('telpOrtu').value,
+                // Ambil nilai telepon orang tua dari input
+                
+                asalSekolah: document.getElementById('asalSekolah').value,
+                // Ambil nilai asal sekolah dari input
+                
+                nilaiRata: document.getElementById('nilaiRata').value,
+                // Ambil nilai rata-rata rapor dari input
+                
+                jurusan: document.getElementById('jurusan').value,
+                // Ambil nilai jurusan pilihan dari dropdown
+                
+                tanggalDaftar: new Date().toISOString()
+                // Simpan tanggal pendaftaran saat ini dalam format ISO
+            };
+            
+            // Validasi NISN harus 10 digit angka
+            if (data.nisn.length !== 10 || isNaN(data.nisn)) {
+                alert('NISN harus berisi 10 digit angka!');
+                // Tampilkan alert jika NISN tidak valid
+                return;
+                // Hentikan eksekusi fungsi
+            }
+            
+            // Validasi nomor telepon harus angka dan minimal 10 digit
+            if (data.noTelp.length < 10 || isNaN(data.noTelp)) {
+                alert('Nomor telepon tidak valid! Minimal 10 digit angka.');
+                // Tampilkan alert jika nomor telepon tidak valid
+                return;
+                // Hentikan eksekusi fungsi
+            }
+            
+            // Validasi nilai rata-rata harus antara 0-100
+            if (data.nilaiRata < 0 || data.nilaiRata > 100) {
+                alert('Nilai rata-rata harus antara 0 sampai 100!');
+                // Tampilkan alert jika nilai tidak valid
+                return;
+                // Hentikan eksekusi fungsi
+            }
+            
+            // Simpan data pendaftaran ke localStorage
+            const pendaftaran = JSON.parse(localStorage.getItem('pendaftaran')) || [];
+            // Ambil data pendaftaran yang sudah ada atau buat array kosong
+            
+            pendaftaran.push(data);
+            // Tambahkan data baru ke array
+            
+            localStorage.setItem('pendaftaran', JSON.stringify(pendaftaran));
+            // Simpan array yang sudah diupdate ke localStorage
+            
+            // Tampilkan pesan sukses
+            const successBox = document.getElementById('successMessage');
+            // Ambil elemen success box
+            
+            successBox.textContent = `Pendaftaran berhasil! Terima kasih ${data.namaLengkap}. Kami akan menghubungi Anda melalui email ${data.email} untuk informasi lebih lanjut.`;
+            // Set isi pesan sukses dengan data yang diinput
+            
+            successBox.style.display = 'block';
+            // Tampilkan success box
+            
+            // Reset form
+            event.target.reset();
+            // Kosongkan semua input di form
+            
+            // Scroll ke success message
+            successBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            // Scroll smooth ke posisi success box
+            
+            // Sembunyikan pesan setelah 8 detik
+            setTimeout(() => {
+                successBox.style.display = 'none';
+                // Sembunyikan success box
+            }, 8000);
+        }
+        
+        // Fungsi untuk handle form kontak
+        function handleKontak(event) {
+            event.preventDefault();
+            // Mencegah form reload halaman
+            
+            // Ambil nilai dari form kontak
+            const nama = document.getElementById('contactNama').value;
+            // Ambil nilai nama
+            
+            const email = document.getElementById('contactEmail').value;
+            // Ambil nilai email
+            
+            const subjek = document.getElementById('contactSubjek').value;
+            // Ambil nilai subjek
+            
+            const pesan = document.getElementById('contactPesan').value;
+            // Ambil nilai pesan
+            
+            // Validasi email harus mengandung @ dan .
+            if (!email.includes('@') || !email.includes('.')) {
+                alert('Format email tidak valid!');
+                // Tampilkan alert jika email tidak valid
+                return;
+                // Hentikan eksekusi fungsi
+            }
+            
+            // Validasi pesan minimal 20 karakter
+            if (pesan.length < 20) {
+                alert('Pesan minimal 20 karakter!');
+                // Tampilkan alert jika pesan terlalu pendek
+                return;
+                // Hentikan eksekusi fungsi
+            }
+            
+            // Buat object data kontak
+            const contactData = {
+                nama: nama,
+                email: email,
+                subjek: subjek,
+                pesan: pesan,
+                tanggal: new Date().toISOString()
+                // Simpan waktu pengiriman pesan
+            };
+            
+            // Simpan ke localStorage
+            const contacts = JSON.parse(localStorage.getItem('contacts')) || [];
+            // Ambil data kontak yang sudah ada atau array kosong
+            
+            contacts.push(contactData);
+            // Tambahkan data baru ke array
+            
+            localStorage.setItem('contacts', JSON.stringify(contacts));
+            // Simpan array ke localStorage
+            
+            // Tampilkan pesan sukses
+            const successBox = document.getElementById('contactSuccess');
+            // Ambil elemen success box
+            
+            successBox.textContent = `Terima kasih ${nama}! Pesan Anda telah terkirim. Kami akan merespons melalui email ${email} dalam 1x24 jam.`;
+            // Set isi pesan sukses
+            
+            successBox.style.display = 'block';
+            // Tampilkan success box
+            
+            // Reset form
+            event.target.reset();
+            // Kosongkan semua input
+            
+            // Scroll ke pesan sukses
+            successBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            // Scroll smooth ke success box
+            
+            // Sembunyikan pesan setelah 6 detik
+            setTimeout(() => {
+                successBox.style.display = 'none';
+                // Sembunyikan success box
+            }, 6000);
+        }
+    </script>
+    <!-- Penutup tag script -->
+</body>
+<!-- Penutup tag body -->
+
+</html>
+<!-- Penutup tag html -->
+                mlah Rombel</th>
+                        <!-- Kolom jumlah rombongan belajar -->
+                        
+                        <th>Ju

@@ -1,0 +1,648 @@
+<!--Nama  : Chelsea Eunike Limbong
+    NIM   : 41425043
+    Prodi : DIV - Teknologi Rekayasa Perangkat Lunak-->
+    
+<!DOCTYPE html>
+<!-- Deklarasi tipe dokumen HTML5 -->
+
+<html lang="id">
+<!-- Tag pembuka HTML dengan bahasa Indonesia -->
+
+<head>
+    <!-- Bagian kepala dokumen yang berisi informasi meta -->
+    
+    <meta charset="UTF-8">
+    <!-- Set encoding karakter ke UTF-8 untuk mendukung semua karakter -->
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Membuat website responsive di semua perangkat -->
+    
+    <title>Login & Register System</title>
+    <!-- Judul halaman yang muncul di tab browser -->
+    
+    <style>
+        /* Bagian CSS untuk styling tampilan website */
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        /* Reset semua margin dan padding default browser menjadi 0 */
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        /* Styling body dengan font Arial, background gradient ungu, tinggi minimal full screen */
+        
+        .container {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            width: 100%;
+            max-width: 450px;
+            overflow: hidden;
+        }
+        /* Container utama dengan background putih, sudut melengkung, dan shadow */
+        
+        .form-container {
+            padding: 40px;
+        }
+        /* Kontainer untuk form dengan padding 40px di semua sisi */
+        
+        h2 {
+            color: #667eea;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 28px;
+        }
+        /* Judul h2 dengan warna ungu, posisi tengah, ukuran font 28px */
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        /* Grup untuk setiap input form dengan jarak bawah 20px */
+        
+        label {
+            display: block;
+            color: #333;
+            font-weight: bold;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+        /* Label dengan tampilan block, warna gelap, font tebal */
+        
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+        /* Styling semua input text, email, password dengan border dan padding */
+        
+        input:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+        /* Efek saat input diklik dengan border ungu dan shadow */
+        
+        .btn {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
+        /* Tombol submit dengan background gradient, warna putih, full width */
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+        /* Efek hover tombol naik sedikit dengan shadow */
+        
+        .switch-form {
+            text-align: center;
+            margin-top: 20px;
+            color: #666;
+        }
+        /* Teks untuk ganti form di tengah dengan warna abu */
+        
+        .switch-form a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        /* Link untuk ganti form dengan warna ungu dan font tebal */
+        
+        .switch-form a:hover {
+            text-decoration: underline;
+        }
+        /* Efek hover pada link dengan garis bawah */
+        
+        .hidden {
+            display: none;
+        }
+        /* Class untuk menyembunyikan elemen */
+        
+        .success-message {
+            background: #d4edda;
+            color: #155724;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border-left: 4px solid #28a745;
+            display: none;
+        }
+        /* Pesan sukses dengan background hijau muda dan border hijau */
+        
+        .error-message {
+            background: #f8d7da;
+            color: #721c24;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border-left: 4px solid #dc3545;
+            display: none;
+        }
+        /* Pesan error dengan background merah muda dan border merah */
+        
+        .password-strength {
+            margin-top: 8px;
+            font-size: 13px;
+        }
+        /* Indikator kekuatan password */
+        
+        .strength-bar {
+            height: 5px;
+            background: #ddd;
+            border-radius: 3px;
+            margin-top: 5px;
+            overflow: hidden;
+        }
+        /* Bar untuk menampilkan kekuatan password */
+        
+        .strength-bar-fill {
+            height: 100%;
+            width: 0%;
+            transition: all 0.3s ease;
+        }
+        /* Fill bar yang akan berubah sesuai kekuatan password */
+        
+        .strength-weak { 
+            background: #dc3545; 
+            width: 33%; 
+        }
+        /* Warna merah untuk password lemah dengan lebar 33% */
+        
+        .strength-medium { 
+            background: #ffc107; 
+            width: 66%; 
+        }
+        /* Warna kuning untuk password sedang dengan lebar 66% */
+        
+        .strength-strong { 
+            background: #28a745; 
+            width: 100%; 
+        }
+        /* Warna hijau untuk password kuat dengan lebar 100% */
+    </style>
+    <!-- Penutup tag style -->
+</head>
+<!-- Penutup tag head -->
+
+<body>
+    <!-- Bagian body yang berisi konten yang terlihat di website -->
+    
+    <div class="container">
+        <!-- Container utama untuk form login dan register -->
+        
+        <div class="form-container">
+            <!-- Container untuk menampung semua form -->
+            
+            <div id="loginForm">
+                <!-- Div untuk form login -->
+                
+                <h2>Login</h2>
+                <!-- Judul form login -->
+                
+                <div class="success-message" id="loginSuccess"></div>
+                <!-- Tempat untuk menampilkan pesan sukses login -->
+                
+                <div class="error-message" id="loginError"></div>
+                <!-- Tempat untuk menampilkan pesan error login -->
+                
+                <form onsubmit="handleLogin(event)">
+                    <!-- Form login dengan event handler saat submit -->
+                    
+                    <div class="form-group">
+                        <!-- Grup untuk input email -->
+                        
+                        <label for="loginEmail">Email</label>
+                        <!-- Label untuk input email -->
+                        
+                        <input type="email" id="loginEmail" required placeholder="Masukkan email anda">
+                        <!-- Input email dengan validasi required dan placeholder -->
+                    </div>
+                    <!-- Penutup form-group email -->
+                    
+                    <div class="form-group">
+                        <!-- Grup untuk input password -->
+                        
+                        <label for="loginPassword">Password</label>
+                        <!-- Label untuk input password -->
+                        
+                        <input type="password" id="loginPassword" required placeholder="Masukkan password anda">
+                        <!-- Input password dengan validasi required dan placeholder -->
+                    </div>
+                    <!-- Penutup form-group password -->
+                    
+                    <button type="submit" class="btn">Login</button>
+                    <!-- Tombol submit untuk login -->
+                </form>
+                <!-- Penutup form login -->
+                
+                <div class="switch-form">
+                    <!-- Div untuk link ganti ke register -->
+                    
+                    <p>Belum punya akun? <a onclick="showRegister()">Daftar disini</a></p>
+                    <!-- Teks dan link untuk pindah ke form register -->
+                </div>
+                <!-- Penutup switch-form -->
+            </div>
+            <!-- Penutup loginForm -->
+            
+            <div id="registerForm" class="hidden">
+                <!-- Div untuk form register dengan class hidden (tersembunyi) -->
+                
+                <h2>Register</h2>
+                <!-- Judul form register -->
+                
+                <div class="success-message" id="registerSuccess"></div>
+                <!-- Tempat untuk menampilkan pesan sukses register -->
+                
+                <div class="error-message" id="registerError"></div>
+                <!-- Tempat untuk menampilkan pesan error register -->
+                
+                <form onsubmit="handleRegister(event)">
+                    <!-- Form register dengan event handler saat submit -->
+                    
+                    <div class="form-group">
+                        <!-- Grup untuk input nama lengkap -->
+                        
+                        <label for="registerName">Nama Lengkap</label>
+                        <!-- Label untuk input nama -->
+                        
+                        <input type="text" id="registerName" required placeholder="Masukkan nama lengkap">
+                        <!-- Input text untuk nama dengan validasi required -->
+                    </div>
+                    <!-- Penutup form-group nama -->
+                    
+                    <div class="form-group">
+                        <!-- Grup untuk input email -->
+                        
+                        <label for="registerEmail">Email</label>
+                        <!-- Label untuk input email -->
+                        
+                        <input type="email" id="registerEmail" required placeholder="Masukkan email anda">
+                        <!-- Input email dengan validasi required -->
+                    </div>
+                    <!-- Penutup form-group email -->
+                    
+                    <div class="form-group">
+                        <!-- Grup untuk input password -->
+                        
+                        <label for="registerPassword">Password</label>
+                        <!-- Label untuk input password -->
+                        
+                        <input type="password" id="registerPassword" required placeholder="Minimal 6 karakter" oninput="checkPasswordStrength()">
+                        <!-- Input password dengan event oninput untuk cek kekuatan -->
+                        
+                        <div class="password-strength">
+                            <!-- Div untuk menampilkan indikator kekuatan password -->
+                            
+                            <div class="strength-bar">
+                                <!-- Bar kosong untuk kekuatan password -->
+                                
+                                <div class="strength-bar-fill" id="strengthBar"></div>
+                                <!-- Bar isi yang akan berubah warna -->
+                            </div>
+                            <!-- Penutup strength-bar -->
+                            
+                            <span id="strengthText"></span>
+                            <!-- Text untuk menampilkan level kekuatan password -->
+                        </div>
+                        <!-- Penutup password-strength -->
+                    </div>
+                    <!-- Penutup form-group password -->
+                    
+                    <div class="form-group">
+                        <!-- Grup untuk input konfirmasi password -->
+                        
+                        <label for="registerConfirmPassword">Konfirmasi Password</label>
+                        <!-- Label untuk konfirmasi password -->
+                        
+                        <input type="password" id="registerConfirmPassword" required placeholder="Ulangi password">
+                        <!-- Input untuk konfirmasi password -->
+                    </div>
+                    <!-- Penutup form-group konfirmasi password -->
+                    
+                    <button type="submit" class="btn">Daftar</button>
+                    <!-- Tombol submit untuk register -->
+                </form>
+                <!-- Penutup form register -->
+                
+                <div class="switch-form">
+                    <!-- Div untuk link ganti ke login -->
+                    
+                    <p>Sudah punya akun? <a onclick="showLogin()">Login disini</a></p>
+                    <!-- Teks dan link untuk kembali ke form login -->
+                </div>
+                <!-- Penutup switch-form -->
+            </div>
+            <!-- Penutup registerForm -->
+        </div>
+        <!-- Penutup form-container -->
+    </div>
+    <!-- Penutup container -->
+    
+    <script>
+        // Bagian JavaScript untuk membuat website interaktif
+        
+        // Fungsi untuk menampilkan form register dan menyembunyikan form login
+        function showRegister() {
+            document.getElementById('loginForm').classList.add('hidden');
+            // Tambah class hidden ke form login agar tersembunyi
+            
+            document.getElementById('registerForm').classList.remove('hidden');
+            // Hapus class hidden dari form register agar terlihat
+            
+            clearMessages();
+            // Panggil fungsi untuk membersihkan semua pesan error/sukses
+        }
+        
+        // Fungsi untuk menampilkan form login dan menyembunyikan form register
+        function showLogin() {
+            document.getElementById('registerForm').classList.add('hidden');
+            // Tambah class hidden ke form register agar tersembunyi
+            
+            document.getElementById('loginForm').classList.remove('hidden');
+            // Hapus class hidden dari form login agar terlihat
+            
+            clearMessages();
+            // Panggil fungsi untuk membersihkan semua pesan error/sukses
+        }
+        
+        // Fungsi untuk membersihkan semua pesan error dan sukses
+        function clearMessages() {
+            const messages = document.querySelectorAll('.success-message, .error-message');
+            // Ambil semua elemen dengan class success-message atau error-message
+            
+            messages.forEach(msg => {
+                msg.style.display = 'none';
+                // Sembunyikan setiap pesan
+                
+                msg.textContent = '';
+                // Kosongkan isi teks pesan
+            });
+        }
+        
+        // Fungsi untuk menampilkan pesan error
+        function showError(elementId, message) {
+            const errorElement = document.getElementById(elementId);
+            // Ambil elemen error berdasarkan ID
+            
+            errorElement.textContent = message;
+            // Set isi teks error dengan pesan
+            
+            errorElement.style.display = 'block';
+            // Tampilkan elemen error
+            
+            setTimeout(() => {
+                errorElement.style.display = 'none';
+                // Sembunyikan pesan error setelah 5 detik
+            }, 5000);
+        }
+        
+        // Fungsi untuk menampilkan pesan sukses
+        function showSuccess(elementId, message) {
+            const successElement = document.getElementById(elementId);
+            // Ambil elemen sukses berdasarkan ID
+            
+            successElement.textContent = message;
+            // Set isi teks sukses dengan pesan
+            
+            successElement.style.display = 'block';
+            // Tampilkan elemen sukses
+            
+            setTimeout(() => {
+                successElement.style.display = 'none';
+                // Sembunyikan pesan sukses setelah 5 detik
+            }, 5000);
+        }
+        
+        // Fungsi untuk mengecek kekuatan password
+        function checkPasswordStrength() {
+            const password = document.getElementById('registerPassword').value;
+            // Ambil nilai password dari input
+            
+            const strengthBar = document.getElementById('strengthBar');
+            // Ambil elemen bar kekuatan
+            
+            const strengthText = document.getElementById('strengthText');
+            // Ambil elemen teks kekuatan
+            
+            let strength = 0;
+            // Variabel untuk menyimpan nilai kekuatan
+            
+            if (password.length >= 6) strength++;
+            // Tambah 1 jika panjang password minimal 6 karakter
+            
+            if (password.match(/[a-z]/) && password.match(/[A-Z]/)) strength++;
+            // Tambah 1 jika ada huruf kecil dan besar
+            
+            if (password.match(/[0-9]/)) strength++;
+            // Tambah 1 jika ada angka
+            
+            if (password.match(/[^a-zA-Z0-9]/)) strength++;
+            // Tambah 1 jika ada karakter spesial
+            
+            strengthBar.className = 'strength-bar-fill';
+            // Reset class bar
+            
+            if (strength === 0) {
+                strengthText.textContent = '';
+                // Kosongkan teks jika tidak ada password
+            } else if (strength <= 2) {
+                strengthBar.classList.add('strength-weak');
+                // Tambah class weak untuk password lemah
+                
+                strengthText.textContent = 'Lemah';
+                strengthText.style.color = '#dc3545';
+                // Set teks dan warna merah untuk password lemah
+            } else if (strength === 3) {
+                strengthBar.classList.add('strength-medium');
+                // Tambah class medium untuk password sedang
+                
+                strengthText.textContent = 'Sedang';
+                strengthText.style.color = '#ffc107';
+                // Set teks dan warna kuning untuk password sedang
+            } else {
+                strengthBar.classList.add('strength-strong');
+                // Tambah class strong untuk password kuat
+                
+                strengthText.textContent = 'Kuat';
+                strengthText.style.color = '#28a745';
+                // Set teks dan warna hijau untuk password kuat
+            }
+        }
+        
+        // Fungsi untuk handle proses login
+        function handleLogin(event) {
+            event.preventDefault();
+            // Mencegah form melakukan submit default yang reload halaman
+            
+            clearMessages();
+            // Bersihkan pesan sebelumnya
+            
+            const email = document.getElementById('loginEmail').value;
+            // Ambil nilai email dari input
+            
+            const password = document.getElementById('loginPassword').value;
+            // Ambil nilai password dari input
+            
+            // Validasi email
+            if (!email.includes('@')) {
+                showError('loginError', 'Format email tidak valid!');
+                // Tampilkan error jika email tidak ada simbol @
+                return;
+                // Hentikan eksekusi fungsi
+            }
+            
+            // Validasi password
+            if (password.length < 6) {
+                showError('loginError', 'Password minimal 6 karakter!');
+                // Tampilkan error jika password kurang dari 6 karakter
+                return;
+                // Hentikan eksekusi fungsi
+            }
+            
+            // Cek apakah user sudah terdaftar di localStorage
+            const users = JSON.parse(localStorage.getItem('users')) || [];
+            // Ambil data users dari localStorage atau array kosong jika tidak ada
+            
+            const user = users.find(u => u.email === email && u.password === password);
+            // Cari user dengan email dan password yang cocok
+            
+            if (user) {
+                showSuccess('loginSuccess', `Selamat datang, ${user.name}!`);
+                // Tampilkan pesan sukses jika login berhasil
+                
+                localStorage.setItem('currentUser', JSON.stringify(user));
+                // Simpan data user yang login ke localStorage
+                
+                setTimeout(() => {
+                    alert('Login berhasil! Anda akan diarahkan ke dashboard.');
+                    // Tampilkan alert setelah 1 detik
+                }, 1000);
+            } else {
+                showError('loginError', 'Email atau password salah!');
+                // Tampilkan error jika user tidak ditemukan
+            }
+        }
+        
+        // Fungsi untuk handle proses register
+        function handleRegister(event) {
+            event.preventDefault();
+            // Mencegah form melakukan submit default yang reload halaman
+            
+            clearMessages();
+            // Bersihkan pesan sebelumnya
+            
+            const name = document.getElementById('registerName').value;
+            // Ambil nilai nama dari input
+            
+            const email = document.getElementById('registerEmail').value;
+            // Ambil nilai email dari input
+            
+            const password = document.getElementById('registerPassword').value;
+            // Ambil nilai password dari input
+            
+            const confirmPassword = document.getElementById('registerConfirmPassword').value;
+            // Ambil nilai konfirmasi password dari input
+            
+            // Validasi nama
+            if (name.trim().length < 3) {
+                showError('registerError', 'Nama minimal 3 karakter!');
+                // Tampilkan error jika nama kurang dari 3 karakter
+                return;
+                // Hentikan eksekusi fungsi
+            }
+            
+            // Validasi email
+            if (!email.includes('@') || !email.includes('.')) {
+                showError('registerError', 'Format email tidak valid!');
+                // Tampilkan error jika email tidak valid
+                return;
+                // Hentikan eksekusi fungsi
+            }
+            
+            // Validasi password
+            if (password.length < 6) {
+                showError('registerError', 'Password minimal 6 karakter!');
+                // Tampilkan error jika password kurang dari 6 karakter
+                return;
+                // Hentikan eksekusi fungsi
+            }
+            
+            // Validasi konfirmasi password
+            if (password !== confirmPassword) {
+                showError('registerError', 'Password dan konfirmasi password tidak cocok!');
+                // Tampilkan error jika password tidak sama
+                return;
+                // Hentikan eksekusi fungsi
+            }
+            
+            // Ambil data users yang sudah ada
+            const users = JSON.parse(localStorage.getItem('users')) || [];
+            // Ambil data users dari localStorage atau array kosong
+            
+            // Cek apakah email sudah terdaftar
+            if (users.find(u => u.email === email)) {
+                showError('registerError', 'Email sudah terdaftar!');
+                // Tampilkan error jika email sudah ada
+                return;
+                // Hentikan eksekusi fungsi
+            }
+            
+            // Buat object user baru
+            const newUser = {
+                name: name,
+                email: email,
+                password: password,
+                registeredAt: new Date().toISOString()
+            };
+            // Object berisi data user baru dengan waktu registrasi
+            
+            users.push(newUser);
+            // Tambahkan user baru ke array users
+            
+            localStorage.setItem('users', JSON.stringify(users));
+            // Simpan array users yang sudah diupdate ke localStorage
+            
+            showSuccess('registerSuccess', 'Registrasi berhasil! Silakan login.');
+            // Tampilkan pesan sukses
+            
+            setTimeout(() => {
+                showLogin();
+                // Pindah ke form login setelah 2 detik
+                
+                document.getElementById('loginEmail').value = email;
+                // Isi email di form login dengan email yang baru didaftarkan
+            }, 2000);
+        }
+    </script>
+    <!-- Penutup tag script -->
+</body>
+<!-- Penutup tag body -->
+
+</html>
+<!-- Penutup tag html -->

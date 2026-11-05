@@ -1,0 +1,77 @@
+<!--Nama  : Chelsea Eunike Limbong
+    NIM   : 41425043
+    Prodi : DIV - Teknologi Rekayasa Perangkat Lunak-->
+
+<!DOCTYPE html> <!-- Deklarasi HTML5 -->
+<html lang="id"> <!-- Awal dokumen HTML, bahasa Indonesia -->
+<head> <!-- Bagian kepala -->
+  <meta charset="UTF-8"> <!-- Set karakter UTF-8 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Agar responsive di HP -->
+  <title>Toko Online Sederhana</title> <!-- Judul tab browser -->
+  <link rel="stylesheet" href="style.css"> <!-- Hubungkan CSS -->
+</head> <!-- Tutup head -->
+
+<body> <!-- Awal isi halaman -->
+
+  <header> <!-- Bagian atas -->
+    <h1>LIMBONG SHOP</h1> <!-- Nama toko -->
+    <nav> <!-- Navigasi menu -->
+      <ul> <!-- Daftar menu -->
+        <li><a href="#home">Home</a></li> <!-- Link ke bagian Home -->
+        <li><a href="#produk">Produk</a></li> <!-- Link ke bagian produk -->
+        <li><a href="#keranjang">Keranjang</a></li> <!-- Link ke keranjang -->
+        <li><a href="#kontak">Kontak</a></li> <!-- Link ke kontak -->
+      </ul> <!-- Tutup daftar -->
+    </nav> <!-- Tutup nav -->
+  </header> <!-- Tutup header -->
+
+  <main> <!-- Bagian utama -->
+    <section id="produk"> <!-- Bagian produk -->
+      <h2>Daftar Produk</h2> <!-- Judul bagian produk -->
+      <div class="produk-list"> <!-- Wadah semua produk -->
+
+        <div class="produk"> <!-- Satu kartu produk -->
+          <img src="F1.jpg" alt=""> <!-- Gambar produk -->
+          <h3>Jersey Real Madrid</h3> <!-- Nama produk -->
+          <p>Rp 900.000</p> <!-- Harga produk -->
+          <button onclick="tambahKeKeranjang('Jersey Real Madrid',100000)">Tambah ke Keranjang</button> <!-- Tombol beli -->
+        </div> <!-- Tutup produk -->
+
+        <div class="produk"> <!-- Produk kedua -->
+          <img src="F2.jpg" alt="Hoodie MIT"> <!-- Gambar -->
+          <h3>Hoodie MIT</h3> <!-- Nama produk -->
+          <p>700.000</p> <!-- Harga -->
+          <button onclick="tambahKeKeranjang('Hoodie MIT',250000)">Tambah ke Keranjang</button> <!-- Tombol beli -->
+        </div> <!-- Tutup produk -->
+
+        <div class="produk"> <!-- Produk ketiga -->
+          <img src="F3.jpg" alt="Jersey Lakers"> <!-- Gambar -->
+          <h3>Jersey Lakers</h3> <!-- Nama -->
+          <p>Rp 1.000.000</p> <!-- Harga -->
+          <button onclick="tambahKeKeranjang('Chelsea IT DEL',300000)">Tambah ke Keranjang</button> <!-- Tombol beli -->
+        </div> <!-- Tutup produk -->
+
+      </div> <!-- Tutup produk-list -->
+    </section> <!-- Tutup section produk -->
+
+    <section id="keranjang"> <!-- Bagian keranjang -->
+      <h2>Keranjang Belanja</h2> <!-- Judul -->
+      <ul id="daftarKeranjang"></ul> <!-- Tempat daftar barang -->
+      <p id="totalHarga">Total: Rp 0</p> <!-- Total harga -->
+      <button id="checkoutBtn" onclick="checkout()">Checkout</button> <!-- Tombol checkout -->
+    </section> <!-- Tutup section keranjang -->
+
+    <section id="kontak"> <!-- Bagian kontak -->
+      <h2>Hubungi Kami</h2> <!-- Judul kontak -->
+      <p>Email: limbongshop@gmail.com</p> <!-- Alamat email -->
+      <p>Telepon: 0819-5244-6621</p> <!-- Nomor HP -->
+    </section> <!-- Tutup section kontak -->
+  </main> <!-- Tutup main -->
+
+  <footer> <!-- Bagian bawah -->
+    <p>&copy; 2025 LIMBONG SHOP Online. Semua Hak Dilindungi.</p> <!-- Hak cipta -->
+  </footer> <!-- Tutup footer -->
+
+  <script src="script.js"></script> <!-- Hubungkan JS -->
+</body> <!-- Tutup body -->
+</html> <!-- Tutup html -->

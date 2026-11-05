@@ -1,0 +1,27 @@
+/*Nama  : Chelsea Eunike Limbong
+  NIM   : 41425043
+  Prodi : DIV - Teknologi Rekayasa PErangkat Lunak*/
+  
+body { font-family: Arial, sans-serif; /* Jenis huruf */ margin: 0; /* Hilangkan margin */ background: #f9f9f9; /* Warna latar */ }
+
+header { background: #0077b6; /* Warna biru */ color: white; /* Warna teks putih */ text-align: center; /* Tengah */ padding: 15px; /* Ruang dalam */ }
+
+nav ul { list-style: none; /* Hilangkan bullet */ display: flex; /* Menu horizontal */ justify-content: center; /* Tengah */ gap: 20px; /* Jarak menu */ padding: 0; /* Hilangkan padding */ }
+
+nav a { color: white; /* Warna teks link */ text-decoration: none; /* Hilangkan garis bawah */ font-weight: bold; /* Tebal */ }
+
+main { padding: 20px; /* Ruang isi */ }
+
+.produk-list { display: flex; /* Susun sejajar */ gap: 20px; /* Jarak antar produk */ justify-content: center; /* Tengah */ flex-wrap: wrap; /* Biar rapi di HP */ }
+
+.produk { background: white; /* Kotak putih */ border-radius: 10px; /* Sudut tumpul */ box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Bayangan lembut */ padding: 15px; /* Ruang dalam */ text-align: center; /* Tengah */ width: 200px; /* Lebar produk */ }
+
+.produk img { width: 100%; /* Gambar isi penuh */ border-radius: 10px; /* Sudut tumpul */ }
+
+button { background: #0077b6; /* Warna tombol */ color: white; /* Warna teks */ border: none; /* Tanpa border */ padding: 10px; /* Ukuran tombol */ border-radius: 5px; /* Sudut tumpul */ cursor: pointer; /* Ganti kursor */ }
+
+button:hover { background: #0096c7; /* Biru muda saat hover */ }
+
+#keranjang { background: #e0f7ff; /* Warna latar bagian keranjang */ padding: 20px; /* Ruang isi */ border-radius: 8px; /* Sudut tumpul */ margin-top: 30px; /* Jarak dari atas */ }
+
+footer { background: #0077b6; /* Warna biru sama dengan header */ color: white; /* Teks putih */ text-align: center; /* Tengah */ padding: 10px; /* Ruang */ margin-top: 30px; /* Jarak atas */ }

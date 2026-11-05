@@ -1,0 +1,136 @@
+<!--Nama  : Chelsea Eunike Limbong
+    NIM   : 41425043
+    Prodi : DIV - Teknologi Rekayasa Perangkat Lunak-->
+    
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8"> <!-- Set encoding UTF-8 untuk support bahasa Indonesia -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsive untuk mobile -->
+    <title>Sistem Data Pegawai - Tunjangan & Pajak</title> <!-- Judul tab browser -->
+    <link rel="stylesheet" href="style.css"> <!-- Link ke file CSS eksternal -->
+</head>
+<body>
+    <!-- Container utama untuk membungkus semua konten -->
+    <div class="container">
+        <!-- Header/Judul halaman -->
+        <h1>💼 Sistem Data Pegawai</h1>
+        <p class="subtitle">Perhitungan Tunjangan & Pajak</p> <!-- Sub judul untuk info tambahan -->
+        
+        <!-- Section untuk input data pegawai -->
+        <div class="input-section">
+            <h2>Input Data Pegawai</h2> <!-- Sub judul -->
+            
+            <!-- Form untuk input nama pegawai -->
+            <div class="form-group">
+                <label for="namaPegawai">Nama Pegawai:</label> <!-- Label input -->
+                <input type="text" id="namaPegawai" placeholder="Contoh: Chelsea Limbong"> <!-- Input text untuk nama -->
+            </div>
+            
+            <!-- Form untuk input jabatan -->
+            <div class="form-group">
+                <label for="jabatan">Jabatan:</label> <!-- Label input -->
+                <select id="jabatan"> <!-- Dropdown select untuk pilih jabatan -->
+                    <option value="">-- Pilih Jabatan --</option> <!-- Option default -->
+                    <option value="Staff">Staff</option> <!-- Option Staff -->
+                    <option value="Manager">Manager</option> <!-- Option Manager -->
+                    <option value="Direktur">Direktur</option> <!-- Option Direktur -->
+                </select>
+            </div>
+            
+            <!-- Form untuk input gaji pokok -->
+            <div class="form-group">
+                <label for="gajiPokok">Gaji Pokok (Rp):</label> <!-- Label input -->
+                <input type="number" id="gajiPokok" placeholder="0" min="0"> <!-- Input number untuk gaji, min=0 agar tidak negatif -->
+            </div>
+            
+            <!-- Info box untuk menampilkan ketentuan -->
+            <div class="info-box">
+                <h4>📋 Ketentuan:</h4> <!-- Judul info box -->
+                <ul> <!-- Unordered list untuk ketentuan -->
+                    <li>Tunjangan Manager: <strong>20% dari gaji pokok</strong></li> <!-- Item ketentuan tunjangan -->
+                    <li>Pajak: <strong>10% dari gaji pokok</strong></li> <!-- Item ketentuan pajak -->
+                </ul>
+            </div>
+            
+            <!-- Tombol untuk tambah pegawai -->
+            <button id="btnTambah" class="btn btn-primary">Tambah Pegawai</button> <!-- Button dengan id untuk event listener -->
+        </div>
+        
+        <!-- Section untuk menampilkan daftar pegawai -->
+        <div class="daftar-section">
+            <h2>Daftar Pegawai</h2> <!-- Sub judul -->
+            
+            <!-- Tabel untuk menampilkan data pegawai -->
+            <div class="table-container"> <!-- Container untuk membuat tabel responsive -->
+                <table id="tabelPegawai">
+                    <thead> <!-- Header tabel -->
+                        <tr>
+                            <th>No</th> <!-- Kolom nomor urut -->
+                            <th>Nama Pegawai</th> <!-- Kolom nama pegawai -->
+                            <th>Jabatan</th> <!-- Kolom jabatan -->
+                            <th>Gaji Pokok</th> <!-- Kolom gaji pokok -->
+                            <th>Tunjangan</th> <!-- Kolom tunjangan manager -->
+                            <th>Pajak</th> <!-- Kolom potongan pajak -->
+                            <th>Gaji Bersih</th> <!-- Kolom gaji setelah tunjangan dan pajak -->
+                            <th>Aksi</th> <!-- Kolom tombol hapus -->
+                        </tr>
+                    </thead>
+                    <tbody id="bodyTabel"> <!-- Body tabel, akan diisi oleh JavaScript -->
+                        <!-- Data akan ditambahkan di sini oleh JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <!-- Section untuk pegawai dengan gaji tertinggi -->
+        <div class="highlight-section">
+            <h2>🏆 Pegawai dengan Gaji Bersih Tertinggi</h2> <!-- Sub judul -->
+            
+            <!-- Card untuk menampilkan pegawai terbaik -->
+            <div class="highlight-card" id="highlightCard">
+                <div class="highlight-icon">👤</div> <!-- Icon pegawai -->
+                <div class="highlight-content"> <!-- Container untuk konten -->
+                    <div class="highlight-name" id="pegawaiTertinggi">-</div> <!-- Nama pegawai, diupdate oleh JS -->
+                    <div class="highlight-salary" id="gajiTertinggi">Rp 0</div> <!-- Gaji bersih, diupdate oleh JS -->
+                </div>
+            </div>
+        </div>
+        
+        <!-- Section untuk statistik -->
+        <div class="statistik-section">
+            <h2>📊 Statistik Pegawai</h2> <!-- Sub judul -->
+            
+            <!-- Grid container untuk card statistik -->
+            <div class="stats-grid">
+                <!-- Card total pegawai -->
+                <div class="stat-card">
+                    <div class="stat-icon">👥</div> <!-- Icon emoji -->
+                    <div class="stat-label">Total Pegawai</div> <!-- Label -->
+                    <div class="stat-value" id="totalPegawai">0</div> <!-- Nilai, diupdate oleh JS -->
+                </div>
+                
+                <!-- Card total gaji -->
+                <div class="stat-card">
+                    <div class="stat-icon">💰</div> <!-- Icon emoji -->
+                    <div class="stat-label">Total Gaji Bersih</div> <!-- Label -->
+                    <div class="stat-value" id="totalGaji">Rp 0</div> <!-- Nilai, diupdate oleh JS -->
+                </div>
+                
+                <!-- Card rata-rata gaji -->
+                <div class="stat-card">
+                    <div class="stat-icon">📈</div> <!-- Icon emoji -->
+                    <div class="stat-label">Rata-rata Gaji</div> <!-- Label -->
+                    <div class="stat-value" id="rataRataGaji">Rp 0</div> <!-- Nilai, diupdate oleh JS -->
+                </div>
+            </div>
+            
+            <!-- Tombol reset untuk hapus semua data -->
+            <button id="btnReset" class="btn btn-secondary">Reset Semua Data</button> <!-- Button reset -->
+        </div>
+    </div>
+    
+    <!-- Link ke file JavaScript eksternal, ditaruh di akhir agar HTML dimuat dulu -->
+    <script src="script.js"></script>
+</body>
+</html>

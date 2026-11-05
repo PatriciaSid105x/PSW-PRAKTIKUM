@@ -1,0 +1,1 @@
+Debugging adalah proses mencari dan memperbaiki kesalahan atau bug dalam sebuah program. Bagi pemula pemrograman, debugging membantu memahami mengapa program tidak berjalan sesuai yang diharapkan dan memperbaikinya agar dapat bekerja dengan benar.

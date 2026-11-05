@@ -1,0 +1,179 @@
+* { 
+  margin: 0; 
+  padding: 0; 
+  box-sizing: border-box; 
+}
+
+body {
+  font-family: 'Segoe UI', Arial, sans-serif; 
+  background: #f2f2f2; 
+  color: #222; 
+  line-height: 1.6; 
+}
+
+.hero {
+  color: #fff; 
+  padding: 60px 20px; 
+  text-align: center; 
+  background-size: cover; 
+  background-position: center; 
+  animation: fadeIn 1s ease; 
+}
+
+img.responsive {
+  width: 300px;                /* Lebar tetap */
+  max-width: 100%;             /* Maksimal sesuai kontainer */
+  height: auto;                /* Proporsional */
+  display: block;
+  margin: 0 auto;              /* Centering */
+  border-radius: 820px;          /* Bulat */
+  box-shadow: 0 0 5px rgba(0,0,0,0.3); /* Bayangan */
+}
+
+.f1-hero {
+  background-image: url('https://wallpapercave.com/wp/wp2478869.jpg');
+}
+
+.motogp-hero {
+  background-image: url('https://wallpapercave.com/wp/wp3842256.jpg');
+}
+
+.hero-text h1 { 
+  font-size: 3rem; 
+  margin-bottom: 10px; 
+}
+
+.hero-text p { 
+  font-size: 1.2rem; 
+}
+
+nav {
+  background: #111; 
+  display: flex; 
+  justify-content: center; 
+  gap: 20px; 
+  padding: 10px;
+}
+
+nav a {
+  color: #fff; 
+  text-decoration: none; 
+  padding: 8px 15px; 
+  font-weight: bold; 
+  border-radius: 8px; 
+  transition: 0.3s; 
+}
+
+nav a:hover, nav a.active {
+  background: #e10600; 
+}
+
+.container {
+  max-width: 950px; 
+  margin: 25px auto; 
+  padding: 25px;
+  background: #fff; 
+  border-radius: 15px; 
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15); 
+  animation: fadeIn 1s ease; 
+}
+
+h2 { 
+  margin-bottom: 15px; 
+  color: #e10600; 
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+  gap: 15px; 
+}
+
+.card {
+  background: #fafafa; 
+  padding: 20px;
+  text-align: center;
+  border-radius: 12px;
+  font-weight: bold;
+  border: 2px solid transparent;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.05); 
+  border-color: #e10600; 
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.schedule {
+  width: 100%;
+  border-collapse: collapse; 
+  margin-top: 10px;
+}
+
+.schedule th, .schedule td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: center;
+}
+
+.schedule th {
+  background: #e10600; 
+  color: #fff;
+}
+
+.schedule tr:nth-child(even) {
+  background: #f9f9f9; 
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 15px;
+}
+
+.gallery img {
+  width: 100%;
+  border-radius: 12px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.gallery img:hover {
+  transform: scale(1.08); 
+  box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+}
+
+.btn {
+  display: inline-block;
+  background: #e10600;
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #b00000;
+  transform: translateY(-3px); 
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.center { 
+  text-align: center; 
+}
+
+footer {
+  background: #111;
+  color: #fff;
+  text-align: center;
+  padding: 15px;
+  margin-top: 30px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}

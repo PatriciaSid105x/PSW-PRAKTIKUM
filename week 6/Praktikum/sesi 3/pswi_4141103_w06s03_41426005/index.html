@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Halaman Pertama Saya</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Selamat Datang di Situs Saya</h1>
+        <img src="web.jpg"
+            srcset="web.jpg 320w, web.jpg 640w"
+            sizes="(min-width: 48rem) 50vw, 92vw"
+            width="150" height="200" alt="Kegiatan diskusi mahasiswa">
+        <p>Halaman pertama Pengembangan Situs Web I.</p>
+    </header>
+    <main>
+        <h2>Profil Singkat</h2>
+        <p>Nama saya Patricia Sidabutar. Saya sedang belajar web.</p>
+        <button type="button" id="greeting-button">Tampilkan salam</button>
+        <section>
+            <h2>Tujuan Belajar</h2>
+            <ul>
+                <li>Memahami cara kerja web</li>
+                <li>Membuat halaman HTML</li>
+                <li>Menggunakan Git</li>
+            </ul>
+        </section>
+
+        <nav aria-label="Navigasi utama">
+            <ul class="nav-list">
+                <li><a href="#kegiatan">Kegiatan</a></li>
+                <li><a href="#kontak">Kontak</a></li>
+            </ul>
+        </nav>
+        <h1>Kegiatan Mahasiswa</h1>
+        <div class="catalog">
+            <article class="card">
+                <figure>
+                    <img src="rinjani.jpg" width="200" height="150">
+                    <figcaption>Ini Adalah Gunung Rinjani</figcaption>
+                </figure>
+                <h2>Lokakarya HTML senang bisa belajar psw</h2>
+                <p>Belajar struktur.</p>
+                <button type="submit" id="btn-1" class="btn-alert">Tekan disini</button>
+            </article>
+            <article class="card">
+                <figure>
+                    <img src="lawu.jpg" width="200" height="150">
+                    <figcaption>Ini Adalah Gunung Lawu</figcaption>
+                </figure>
+                <h2>Diskusi CSS</h2>
+                <p>Belajar tampilan.</p>
+                <button type="button" id="btn-2" class="btn-alert">Tekan disini</button>
+            </article>
+            <article class="card">
+                <figure>
+                    <img src="sumbing.jpg" width="200" height="150">
+                    <figcaption>Ini Adalah Gunung Sumbing</figcaption>
+                </figure>
+                <h2>Audit Web</h2>
+                <p>Menguji kualitas.</p>
+                <button type="button" id="btn-3" class="btn-alert">Tekan disini</button>
+            </article>
+            <article class="card">
+                <figure>
+                    <img src="sindoro.jpg" width="200" height="150">
+                    <figcaption>Ini Adalah Gunung Sindoro</figcaption>
+                </figure>
+                <h2>iniadalahcontohpercobaandatapanjangtanpaspasi</h2>
+                <p>percobaan data panjang</p>
+                <button type="button" id="btn-4" class="btn-alert">Tekan disini</button>
+            </article>
+            <article class="card">
+                <figure>
+                    <img src="slamet.jpg" width="200" height="150">
+                    <figcaption>Ini Adalah Gunung Slamet</figcaption>
+                </figure>
+                <h2>iniadalahkartutambahanpadaweb</h2>
+                <p>kartu tambahan pada web</p>
+                <button type="button" id="btn-5" class="btn-alert">Tekan disini</button>
+            </article>
+        </div>
+        <script src="js/main.js"></script>
+    </main>
+    <footer id="kontak">Kontak: kegiatan@example.com</footer>
+</body>
+
+</html>

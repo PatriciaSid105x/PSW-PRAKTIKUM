@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pendaftaran Kegiatan</title>
+    <link rel="stylesheet" href="css/style.css">
+
+<body>
+    <header>
+        <h1>Selamat Datang di Situs Saya</h1>
+        <img src="p2.jpg" srcset="p2.jpg 320w, p2.jpg 640w" sizes="(min-width: 48rem) 50vw, 92vw" width="1200"
+            height="300" alt="Kegiatan diskusi mahasiswa">
+        <nav aria-label="Navigasi utama">
+            <ul class="nav-list">
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="kegiatan.html" aria-current="page">Kegiatan</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Pendaftaran Kegiatan</h1>
+            <p class="notice">Kolom bertanda wajib harus diisi.</p>
+            <form action="/lanjut" method="get"></form>
+            <label for="nama">Nama lengkap (wajib)</label>
+            <input id="nama" name="nama" type="text" autocomplete="name" required><br>
+
+            <label for="telepon">Nomor Telepon (wajib)</label>
+            <input id="telepon" name="telepon" type="tel" autocomplete="tel" required><br>
+
+            <label for="email">Email (wajib)</label>>
+            <input id="email" name="email" type="email" autocomplete="email" required><br>
+
+            <label for="tiket">Jumlah Tiket (wajib)</label>
+            <input id="tiket" name="tiket" type="number" min="1" max="5" step="1" required><br>
+            
+            <label for="kode">Kode peserta (6 angka, wajib)</label>
+            <p id="kode-help"></p>
+            <input id="kode" name="kode" type="text" inputmode="numeric" pattern="[0-9]{6}" aria-describedby="kode-help"
+                required><br>
+            <label for="prodi">Program Studi(wajib)</label>
+            <select id="prodi" name="prodi" required>
+                <option value="">Pilih program studi</option>
+                <option value="trpl">D4 TRPL</option>
+                <option value="ti">D3 Teknologi Informasi</option>
+            </select>
+
+            <fieldset>
+                <legend>Mode kehadiran (wajib)</legend>
+                <input id="luring" name="mode" type="radio" value="luring" required>
+                <label for="luring">Luring</label>
+                <input id="daring" name="mode" type="radio" value="daring">
+                <label for="daring">Daring</label>
+            </fieldset>
+            <fieldset>
+                <legend>Minat Topik HTML (wajib)</legend>
+                <input id="HTML" name="minat" type="checkbox" value="THTML" required>
+                <label for="HTML">HTML</label><br>
+                <input id="aksesibilitas" name="minat" type="checkbox" value="aksesibilitas">
+                <label for="aksesibilitas">Aksesibilitas HTML</label>
+            </fieldset>
+
+            <label for="catatan">Catatan (opsional)</label>
+            <textarea id="catatan" name="catatan" rows="4" maxlength="100"></textarea>
+            <br><br>
+            <button type="submit">Daftar</button>
+    </main>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
