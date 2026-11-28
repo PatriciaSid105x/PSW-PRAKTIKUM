@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Latihan CRUD Web Storage, debugging, dan audit kualitas PSWI Minggu 12 Sesi 3.">
+    <title>Halaman Pertama Saya</title>
+    <link rel="stylesheet" href="style.css">
+ <link rel="icon" href="data:,">
+</head>
+
+<body>
+    <header>
+        <h1>Selamat Datang</h1>
+        <p>Halaman pertama Pengembangan Situs Web I.</p>
+    </header>
+
+    <main>
+        <section aria-labelledby="heading-crud">
+            <h2 id="heading-crud">Daftar Peserta</h2>
+
+            <form id="form-peserta">
+                <label for="nama">Nama (wajib)</label>
+                <input id="nama" name="nama" type="text" autocomplete="off" required>
+                <button type="submit">Tambah</button>
+            </form>
+
+            <div class="aksi-tambahan">
+                <button id="reset" type="button">Reset data latihan</button>
+                <button type="button" id="greeting-button">Tampilkan salam</button>
+            </div>
+
+            <p id="pesan" role="status" aria-live="polite"></p>
+            <ul id="daftar"></ul>
+        </section>
+
+        <img src="gambar/image.jpg" width="640" height="480" alt="Gambar">
+
+    </main>
+
+    <script src="main.js" defer></script>
+</body>
+
+</html>
